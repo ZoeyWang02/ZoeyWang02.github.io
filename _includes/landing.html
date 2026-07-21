@@ -1,15 +1,35 @@
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
+<section class="landing-hero">
 
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="Image of a corgi smiling for {{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
-      </div>
+  <div class="hero-copy">
+    <h1 class="wow animated fadeInUp" data-wow-delay=".05s">
+      Turning raw data into <span class="pop">cozy</span> little stories.
+      <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg>
+    </h1>
+
+    <p class="terminal-line wow animated fadeInUp" data-wow-delay=".15s">
+      <span class="prompt">&gt;</span> {{ site.description | replace: "|", "&middot;" }}<span class="cursor"></span>
+    </p>
+
+    <div class="tag-row wow animated fadeInUp" data-wow-delay=".22s">
+      <span class="tag">Python</span>
+      <span class="tag">Altair</span>
+      <span class="tag">Vega-Lite</span>
+      <span class="tag">HTML/CSS</span>
     </div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
+    <div class="cta-row wow animated fadeInUp" data-wow-delay=".3s">
+      <a class="btn ghost" href="{{ '/projects/' | relative_url }}">View Projects &rarr;</a>
+      <a class="btn ghost" href="mailto:{{ site.author.email }}">Say Hello</a>
+    </div>
 
+    <div class="hero-social wow animated fadeInUp" data-wow-delay=".38s">
+      {% include social.html %}
+    </div>
   </div>
-</div>
+
+  <div class="blob-wrap wow animated zoomIn" data-wow-delay=".1s">
+    <div class="blob"></div>
+    <img src="{{ site.author.image }}" alt="Image of a corgi smiling for {{ site.title }}">
+  </div>
+
+</section>
