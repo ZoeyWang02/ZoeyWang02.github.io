@@ -13,6 +13,15 @@
   --home-border: #F4D9B8;
   --home-card: #FFFFFF;
   --home-dot: rgba(240, 146, 75, .16);
+
+  // the cream tone belongs to the whole homepage canvas, not just the hero
+  // card &mdash; without this, only .landing-hero and .cta-band had their own
+  // background set, so About/Featured Work fell through to the site's plain
+  // white page background in between them
+  background: var(--home-bg);
+  color: var(--home-fg);
+  border-radius: 24px;
+  padding: 44px 40px 8px;
 }
 
 [data-theme="dark"] .home-sections {
@@ -139,16 +148,17 @@
 // ================= HERO =================
 
 .landing-hero {
+  // no background-color/padding of its own anymore &mdash; it sits directly on
+  // the shared .home-sections cream canvas so there's no visible seam between
+  // the hero and the sections below it. Keeps its own texture layers though.
   position: relative;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.35fr auto;
   align-items: start;
   gap: 30px;
-  padding: 44px 40px 52px;
-  margin-bottom: 40px;
-  border-radius: 22px;
-  background-color: var(--home-bg);
+  padding-bottom: 44px;
+  margin-bottom: 24px;
   color: var(--home-fg);
   font-family: 'Nunito', sans-serif;
   background-image:
@@ -538,9 +548,13 @@
 }
 
 @media (max-width: 620px) {
+  .home-sections {
+    padding: 32px 24px 8px;
+  }
+
   .landing-hero {
     grid-template-columns: 1fr;
-    padding: 32px 24px 40px;
+    padding-bottom: 32px;
   }
 
   .landing-hero .blob-wrap {
