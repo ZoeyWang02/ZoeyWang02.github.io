@@ -1,35 +1,122 @@
-<section class="landing-hero">
+<div class="home-sections">
 
-  <div class="hero-copy">
-    <h1 class="wow animated fadeInUp" data-wow-delay=".05s">
-      Turning raw data into <span class="pop">cozy</span> little stories.
-      <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg>
-    </h1>
+  <section class="landing-hero">
 
-    <p class="terminal-line wow animated fadeInUp" data-wow-delay=".15s">
-      <span class="prompt">&gt;</span> {{ site.description | replace: "|", "&middot;" }}<span class="cursor"></span>
-    </p>
+    <div class="hero-copy">
+      <h1 class="wow animated fadeInUp" data-wow-delay=".05s">
+        Turning raw data into <span class="pop">cozy</span> little stories.
+        <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg>
+      </h1>
 
-    <div class="tag-row wow animated fadeInUp" data-wow-delay=".22s">
-      <span class="tag">Python</span>
-      <span class="tag">Altair</span>
-      <span class="tag">Vega-Lite</span>
-      <span class="tag">HTML/CSS</span>
+      <p class="terminal-line wow animated fadeInUp" data-wow-delay=".15s">
+        <span class="prompt">&gt;</span> {{ site.description | replace: "|", "&middot;" }}<span class="cursor"></span>
+      </p>
+
+      <div class="tag-row wow animated fadeInUp" data-wow-delay=".22s">
+        <span class="tag">Python</span>
+        <span class="tag">Altair</span>
+        <span class="tag">Vega-Lite</span>
+        <span class="tag">HTML/CSS</span>
+      </div>
+
+      <div class="cta-row wow animated fadeInUp" data-wow-delay=".3s">
+        <a class="btn ghost" href="{{ '/projects/' | relative_url }}">View Projects &rarr;</a>
+        <a class="btn ghost" href="mailto:{{ site.author.email }}">Say Hello</a>
+      </div>
+
+      <div class="hero-social wow animated fadeInUp" data-wow-delay=".38s">
+        {% include social.html %}
+      </div>
     </div>
 
-    <div class="cta-row wow animated fadeInUp" data-wow-delay=".3s">
-      <a class="btn ghost" href="{{ '/projects/' | relative_url }}">View Projects &rarr;</a>
-      <a class="btn ghost" href="mailto:{{ site.author.email }}">Say Hello</a>
+    <div class="blob-wrap wow animated zoomIn" data-wow-delay=".1s">
+      <div class="blob"></div>
+      <img src="{{ site.author.image }}" alt="Image of a corgi smiling for {{ site.title }}">
     </div>
 
-    <div class="hero-social wow animated fadeInUp" data-wow-delay=".38s">
+  </section>
+
+  <!-- About teaser -->
+  <section class="about-section wow animated fadeInUp" data-wow-delay=".1s">
+    <div class="about-copy">
+      <p class="eyebrow">A Bit About Me</p>
+      <h2>From transportation engineering to data storytelling.</h2>
+      <p>
+        I'm an MSIM student at UIUC focused on software engineering, databases, and data
+        visualization &mdash; currently building things like an AI-powered schedule planner and a
+        car-crash risk web app. Before that: civil, hydraulic &amp; transportation engineering at
+        Zhejiang University, which is where the analytical habit started.
+      </p>
+      <div class="tag-row">
+        <span class="tag">Python</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">Photoshop</span>
+        <span class="tag">Illustrator</span>
+      </div>
+      <a class="btn ghost" href="{{ '/about/' | relative_url }}">More about me &rarr;</a>
+    </div>
+    <div class="about-card">
+      <p class="eyebrow">Currently</p>
+      <p class="title">M.S. in Information Management</p>
+      <p class="sub">University of Illinois Urbana&ndash;Champaign &middot; 2025&ndash;2027</p>
+      <div class="dot-accent"></div>
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  {% assign featured_bigfoot = site.projects | where: "name", "Bigfoot Sightings Analysis" | first %}
+  {% assign featured_crime = site.projects | where: "name", "Chicago Crime Analysis 2026" | first %}
+
+  <section class="projects-section wow animated fadeInUp" data-wow-delay=".1s">
+    <div class="projects-head">
+      <div>
+        <p class="eyebrow">Featured Work</p>
+        <h2>A couple of maps worth a second look.</h2>
+      </div>
+      <a class="see-all" href="{{ '/projects/' | relative_url }}">See all projects &rarr;</a>
+    </div>
+    <div class="project-grid">
+
+      {% if featured_bigfoot %}
+      <a class="project-card" href="{{ featured_bigfoot.url | relative_url }}">
+        <img class="thumb" src="{{ featured_bigfoot.image | relative_url }}" alt="">
+        <div class="body">
+          <h3>{{ featured_bigfoot.name }}</h3>
+          <p>{{ featured_bigfoot.description }}</p>
+          <div class="tags">
+            {% for tool in featured_bigfoot.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
+          </div>
+          <span class="read">Read the analysis &rarr;</span>
+        </div>
+      </a>
+      {% endif %}
+
+      {% if featured_crime %}
+      <a class="project-card offset" href="{{ featured_crime.url | relative_url }}">
+        <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg></span>
+        <img class="thumb" src="{{ featured_crime.image }}" alt="">
+        <div class="body">
+          <h3>{{ featured_crime.name }}</h3>
+          <p>{{ featured_crime.description }}</p>
+          <div class="tags">
+            {% for tool in featured_crime.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
+          </div>
+          <span class="read">Read the story &rarr;</span>
+        </div>
+      </a>
+      {% endif %}
+
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="cta-band wow animated fadeIn" data-wow-delay=".1s">
+    <h2>Got a dataset that needs a story?</h2>
+    <p>Always happy to talk data, viz, or the occasional Bigfoot sighting.</p>
+    <div class="cta-row"><a class="btn ghost" href="mailto:{{ site.author.email }}">Say Hello</a></div>
+    <div class="hero-social">
       {% include social.html %}
     </div>
-  </div>
+  </section>
 
-  <div class="blob-wrap wow animated zoomIn" data-wow-delay=".1s">
-    <div class="blob"></div>
-    <img src="{{ site.author.image }}" alt="Image of a corgi smiling for {{ site.title }}">
-  </div>
-
-</section>
+</div>
