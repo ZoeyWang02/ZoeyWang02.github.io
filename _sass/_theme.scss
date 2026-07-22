@@ -31,3 +31,10 @@
   @include themed(background-color, $light, $dark);
 }
 
+body {
+  // light mode had no background of its own (just the browser/Bootstrap
+  // default white) — dark mode already sets one in _theme-dark.scss, so this
+  // is only the light-mode half; passing null for dark leaves that untouched
+  @include themed(background-color, #FFF3E4, null);
+}
+
