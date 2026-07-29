@@ -2,9 +2,10 @@
   from: 2025
   to: 2027
   description: >-
-    Focusing on Software Engineering, Database Systems, and Data Visualization. 
-    Actively developing full-stack projects, including an AI-powered student schedule 
-    planner using Java and Spring Boot, and a car crash risk analysis web application.
+    Focusing on Software Engineering, Database Systems, and Data Visualization.
+    Actively developing full-stack projects, including Nexus, an AI-powered academic
+    planning system built with Java and Spring AI, and a graph-based Enterprise
+    Compliance & Rewards Platform using Neo4j and Redis.
 
 - title: B.S. in Civil, Hydraulic, and Transportation Engineering, Zhejiang University
   from: 2020
