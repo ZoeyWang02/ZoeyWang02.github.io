@@ -64,22 +64,50 @@
     </div>
   </section>
 
-  <!-- Featured Work -->
+  <!-- Research -->
+  <section class="research-section wow animated fadeInUp" data-wow-delay=".1s">
+    <div class="projects-head">
+      <div>
+        <p class="eyebrow">Research</p>
+        <h2>Research on making LLM systems more reliable.</h2>
+      </div>
+      <a class="see-all" href="{{ '/research/' | relative_url }}">See all research &rarr;</a>
+    </div>
+    {% include research/papers.html %}
+  </section>
+
+  <!-- Projects -->
+  {% assign featured_nexus = site.projects | where: "name", "Nexus.ai — AI Schedule Planner" | first %}
   {% assign featured_bigfoot = site.projects | where: "name", "Bigfoot Sightings Analysis" | first %}
-  {% assign featured_crime = site.projects | where: "name", "Chicago Crime Analysis 2026" | first %}
 
   <section class="projects-section wow animated fadeInUp" data-wow-delay=".1s">
     <div class="projects-head">
       <div>
-        <p class="eyebrow">Featured Work</p>
-        <h2>A couple of maps worth a second look.</h2>
+        <p class="eyebrow">Projects</p>
+        <h2>A couple of builds worth a second look.</h2>
       </div>
       <a class="see-all" href="{{ '/projects/' | relative_url }}">See all projects &rarr;</a>
     </div>
     <div class="project-grid">
 
+      {% if featured_nexus %}
+      {%- comment -%} Nexus links out (external_url) until a deployed demo exists {%- endcomment -%}
+      <a class="project-card" href="{% if featured_nexus.external_url %}{{ featured_nexus.external_url }}{% else %}{{ featured_nexus.url | relative_url }}{% endif %}">
+        <img class="thumb" src="{{ featured_nexus.image | relative_url }}" alt="">
+        <div class="body">
+          <h3>{{ featured_nexus.name }}</h3>
+          <p>{{ featured_nexus.description }}</p>
+          <div class="tags">
+            {% for tool in featured_nexus.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
+          </div>
+          <span class="read">View the project &rarr;</span>
+        </div>
+      </a>
+      {% endif %}
+
       {% if featured_bigfoot %}
-      <a class="project-card" href="{{ featured_bigfoot.url | relative_url }}">
+      <a class="project-card offset" href="{{ featured_bigfoot.url | relative_url }}">
+        <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg></span>
         <img class="thumb" src="{{ featured_bigfoot.image | relative_url }}" alt="">
         <div class="body">
           <h3>{{ featured_bigfoot.name }}</h3>
@@ -88,21 +116,6 @@
             {% for tool in featured_bigfoot.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
           </div>
           <span class="read">Read the analysis &rarr;</span>
-        </div>
-      </a>
-      {% endif %}
-
-      {% if featured_crime %}
-      <a class="project-card offset" href="{{ featured_crime.url | relative_url }}">
-        <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></svg></span>
-        <img class="thumb" src="{{ featured_crime.image }}" alt="">
-        <div class="body">
-          <h3>{{ featured_crime.name }}</h3>
-          <p>{{ featured_crime.description }}</p>
-          <div class="tags">
-            {% for tool in featured_crime.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
-          </div>
-          <span class="read">Read the story &rarr;</span>
         </div>
       </a>
       {% endif %}

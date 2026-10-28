@@ -1,0 +1,55 @@
+# Preprints shown on the homepage "Research" section and on /research/.
+# To add a paper: append an entry here, drop its main figure in assets/research/.
+# Titles, author lists and abstracts were checked against the arXiv pages;
+# "status" mirrors what the CV says.
+
+- arxiv: "2610.25768"
+  title: "Truncated Reasoning Under a Budget: Evaluating System-1 Models as Decision-Makers"
+  authors: [Zhongyin Wang, Zhaoqian Xue, Junting Mu, Haozheng Liu, Ye Yuan, Haolun Wu, Lingyao Li]
+  role: First author
+  date: Oct 2026
+  status: Under review, ACL Rolling Review
+  image: assets/research/truncated_reasoning.svg
+  summary: >-
+    When a reasoning model is cut off mid-thought, a System-1 decision model can read the
+    partial trace and answer. At a 1,500-token budget it beats forced answering by 4.1 pp,
+    and a learned stopping policy saves 71.3% of the full-run cost for a 0.58 pp accuracy loss.
+  tags: [LLM Reasoning, Efficiency, Evaluation]
+
+- arxiv: "2610.37229"
+  title: "Decision Models as Judges for Hallucination Detection"
+  authors: [Haozheng Liu, Zhaoqian Xue, Zhongyin Wang, Junting Mu, Zihui Ma, Shuya Feng, Lingyao Li]
+  date: Oct 2026
+  status: Under review, ACL Rolling Review
+  image: assets/research/decision_models.svg
+  summary: >-
+    Can cheap decision models stand in for LLM judges? Across five hallucination types
+    (9,852 items), they match or come close on some types, and a confidence cascade reaches
+    a generative judge's accuracy at 1&ndash;3% of its cost &mdash; but needs validation before use.
+  tags: [LLM-as-a-Judge, Hallucination, Calibration]
+
+- arxiv: "2610.34987"
+  title: "AskGLP1: A Knowledge Graph LLM Agent for Exploring GLP-1 Experience from Online Patient Narratives"
+  authors: [Zhaoqian Xue, Anay Somani, Siddhartha Singh, Junting Mu, Zhongyin Wang, Haozheng Liu, Ayesha Khatun, Yeaeun Kwon, Renkai Ma, Siyuan Ma, Zhe He, Danxia Yu, Lingyao Li]
+  date: Oct 2026
+  status: Preprint
+  image: assets/research/askglp1.png
+  summary: >-
+    A knowledge-graph agent built from 163K Reddit posts and WebMD reviews (385,790
+    drug&ndash;side-effect relations) that answers GLP-1 questions with verifiable evidence,
+    and shows where patient narratives and FAERS reports diverge.
+  tags: [Knowledge Graph, LLM Agent, Pharmacovigilance]
+  code: https://github.com/ZhaoqianXue/AskGLP1
+
+- arxiv: "2610.21042"
+  title: "ReviewPilot: A Multi-Agent System for Screening and Data Extraction in Systematic Reviews"
+  authors: [Zhaoqian Xue, Shaoze Zhou, Xuexin Li, Junting Mu, Haozheng Liu, Zhongyin Wang, Yichun He, Renkai Ma, Hao Zhou, Sarah Bratt, Siyuan Ma, Chen Chen, Lingyao Li]
+  date: Oct 2026
+  status: Under review, ACL Rolling Review
+  image: assets/research/reviewpilot.png
+  summary: >-
+    A conversational multi-agent system that automates the PRISMA workflow. Every screening
+    decision comes with a reason and every extracted value with its source, reaching
+    extraction F1 up to 0.788.
+  tags: [Multi-Agent, Systematic Review, PRISMA]
+  code: https://github.com/ZhaoqianXue/ReviewPilot

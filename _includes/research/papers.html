@@ -1,0 +1,37 @@
+{%- comment -%}
+  Paper cards driven by _data/publications.yml.
+  Pass show_authors=true to list the full author line (used on /research/).
+{%- endcomment -%}
+<div class="paper-grid">
+  {% for paper in site.data.publications %}
+  {%- assign abs_url = "https://arxiv.org/abs/" | append: paper.arxiv -%}
+  {%- assign pdf_url = "https://arxiv.org/pdf/" | append: paper.arxiv -%}
+  <article class="paper-card">
+    <a class="figure" href="{{ abs_url }}" aria-label="Open {{ paper.title | escape }} on arXiv">
+      <img src="{{ paper.image | relative_url }}" alt="Main figure from &ldquo;{{ paper.title | escape }}&rdquo;" loading="lazy">
+    </a>
+    {% if paper.role %}<span class="role">{{ paper.role }}</span>{% endif %}
+    <div class="body">
+      <p class="paper-meta">{{ paper.status }} &middot; {{ paper.date }}</p>
+      <h3><a href="{{ abs_url }}">{{ paper.title }}</a></h3>
+      {% if include.show_authors %}
+      <p class="authors">
+        {%- for author in paper.authors -%}
+          {%- if author == "Zhongyin Wang" -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}
+          {%- unless forloop.last %}, {% endunless -%}
+        {%- endfor -%}
+      </p>
+      {% endif %}
+      <p class="summary">{{ paper.summary }}</p>
+      <div class="tags">
+        {% for tag in paper.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      <p class="paper-links">
+        <a href="{{ abs_url }}">arXiv</a>
+        <a href="{{ pdf_url }}">PDF</a>
+        {% if paper.code %}<a href="{{ paper.code }}">Code</a>{% endif %}
+      </p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
