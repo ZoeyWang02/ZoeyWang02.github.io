@@ -254,8 +254,8 @@
 .landing-hero .blob-wrap {
   position: relative;
   z-index: 1;
-  width: 148px;
-  height: 148px;
+  width: 200px;
+  height: 200px;
   justify-self: end;
   margin-top: 6px;
   transform: rotate(-5deg);
@@ -267,7 +267,7 @@
 
   .blob {
     position: absolute;
-    inset: -14px;
+    inset: -20px;
     z-index: 0;
     background: linear-gradient(135deg, var(--home-accent) 0%, var(--home-accent2) 100%);
     opacity: .35;
