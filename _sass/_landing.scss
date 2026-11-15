@@ -55,13 +55,18 @@
   display: inline-block;
   transition: transform .2s cubic-bezier(.34, 1.56, .64, 1);
 
-  &:nth-child(1) { background: rgba(89, 174, 219, .18); color: var(--home-accent); }
-  &:nth-child(2) { background: rgba(242, 120, 159, .18); color: var(--home-accent2); }
-  &:nth-child(3) { background: rgba(240, 146, 75, .18); color: var(--home-primary); }
-  &:nth-child(4) { background: rgba(89, 174, 219, .18); color: var(--home-accent); }
+  &:nth-child(4n+1) { background: rgba(89, 174, 219, .18); color: var(--home-accent); }
+  &:nth-child(4n+2) { background: rgba(242, 120, 159, .18); color: var(--home-accent2); }
+  &:nth-child(4n+3) { background: rgba(240, 146, 75, .18); color: var(--home-primary); }
+  &:nth-child(4n+4) { background: rgba(89, 174, 219, .18); color: var(--home-accent); }
 
   &:nth-child(odd):hover  { transform: translateY(-3px) rotate(-3deg); }
   &:nth-child(even):hover { transform: translateY(-3px) rotate(3deg); }
+}
+
+// About page: skill groups sit directly under their label
+.skills-section .tag-row {
+  margin-top: 0;
 }
 
 .home-sections .btn {

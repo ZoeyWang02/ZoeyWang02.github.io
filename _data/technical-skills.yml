@@ -1,0 +1,11 @@
+- name: Programming Languages
+  items: [Python, Java, C/C++, SQL, JavaScript, Cypher]
+
+- name: AI
+  items: [LLMs, AI Agents, LLM Evaluation, Prompt Engineering]
+
+- name: Databases
+  items: [Neo4j, MySQL, PostgreSQL, Redis]
+
+- name: Software & Tools
+  items: [Spring Boot, RESTful APIs, Docker, Git, Linux]

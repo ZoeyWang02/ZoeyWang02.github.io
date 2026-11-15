@@ -1,0 +1,16 @@
+<div class="col-lg home-sections skills-section">
+
+  <h2 class="mb-4">Technical Skills</h2>
+
+  <div class="row">
+    {% for group in site.data.technical-skills %}
+    <div class="col-md-6 mb-4 wow animated fadeInUp" data-wow-delay="{{ forloop.index | times: 0.05 }}s">
+      <p class="eyebrow">{{ group.name }}</p>
+      <div class="tag-row">
+        {% for item in group.items %}<span class="tag">{{ item }}</span>{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

@@ -2,15 +2,16 @@
   from: 2025
   to: 2027
   description: >-
-    Focusing on Software Engineering, Database Systems, and Data Visualization.
-    Actively developing full-stack projects, including PlanTriz, an AI-powered academic
-    planning system built with Java and Spring AI, and a graph-based Enterprise
-    Compliance & Rewards Platform using Neo4j and Redis.
+    Focusing on Software Engineering, Database Systems, and Human-Centered AI.
+    Researching LLM agents &mdash; truncated reasoning, LLM-as-a-judge evaluation, and how
+    users hold AI agents accountable &mdash; and building PlanTriz, an AI academic planning
+    system with Java, Spring AI, and Redis.
 
-- title: B.S. in Civil, Hydraulic, and Transportation Engineering, Zhejiang University
+- title: Bachelor in Civil Engineering (Smart Transportation & Systems), Zhejiang University
   from: 2020
   to: 2024
   description: >-
-    Completed rigorous engineering coursework with a strong emphasis on analytical 
-    problem-solving and mathematics. This foundational experience cultivated my logical 
-    thinking and paved the way for my transition into software development and data science.
+    Completed rigorous engineering coursework with a strong emphasis on analytical
+    problem-solving and mathematics. My thesis applied Transformers and graph neural
+    networks to urban road network design, which paved the way for my transition into
+    software development and AI.
