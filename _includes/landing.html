@@ -43,7 +43,7 @@
       <h2>From transportation engineering to data storytelling.</h2>
       <p>
         I'm an MSIM student at UIUC focused on software engineering, databases, and data
-        visualization &mdash; currently building things like Nexus, an AI-powered academic
+        visualization &mdash; currently building things like PlanTriz, an AI-powered academic
         planning system, and a graph-based compliance platform with Neo4j. Before that: civil,
         hydraulic &amp; transportation engineering at Zhejiang University, which is where the
         analytical habit started.
@@ -77,7 +77,7 @@
   </section>
 
   <!-- Projects -->
-  {% assign featured_nexus = site.projects | where: "name", "Nexus.ai — AI Schedule Planner" | first %}
+  {% assign featured_plantriz = site.projects | where: "name", "PlanTriz — AI Schedule Planner" | first %}
   {% assign featured_bigfoot = site.projects | where: "name", "Bigfoot Sightings Analysis" | first %}
 
   <section class="projects-section wow animated fadeInUp" data-wow-delay=".1s">
@@ -90,15 +90,14 @@
     </div>
     <div class="project-grid">
 
-      {% if featured_nexus %}
-      {%- comment -%} Nexus links out (external_url) until a deployed demo exists {%- endcomment -%}
-      <a class="project-card" href="{% if featured_nexus.external_url %}{{ featured_nexus.external_url }}{% else %}{{ featured_nexus.url | relative_url }}{% endif %}">
-        <img class="thumb" src="{{ featured_nexus.image | relative_url }}" alt="">
+      {% if featured_plantriz %}
+      <a class="project-card" href="{% if featured_plantriz.external_url %}{{ featured_plantriz.external_url }}{% else %}{{ featured_plantriz.url | relative_url }}{% endif %}">
+        <img class="thumb" src="{{ featured_plantriz.image | relative_url }}" alt="">
         <div class="body">
-          <h3>{{ featured_nexus.name }}</h3>
-          <p>{{ featured_nexus.description }}</p>
+          <h3>{{ featured_plantriz.name }}</h3>
+          <p>{{ featured_plantriz.description }}</p>
           <div class="tags">
-            {% for tool in featured_nexus.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
+            {% for tool in featured_plantriz.tools %}<span class="tag">{{ tool }}</span>{% endfor %}
           </div>
           <span class="read">View the project &rarr;</span>
         </div>
