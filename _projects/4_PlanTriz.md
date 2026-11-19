@@ -9,6 +9,8 @@ description: An AI academic assistant that decomposes tasks and auto-schedules t
 
 PlanTriz is an AI academic assistant that decomposes tasks and auto-schedules them onto your calendar. The demo below walks through the main flow, about two minutes end to end.
 
+**Try it live: [www.plantriz.com](https://www.plantriz.com)**
+
 <video controls preload="metadata" playsinline poster="{{ '/assets/pngs/plantriz-poster.jpg' | relative_url }}" style="width: 100%; border-radius: 12px;">
   <source src="{{ '/assets/video/plantriz-demo.mp4' | relative_url }}" type="video/mp4">
   Your browser doesn't support embedded video. <a href="{{ '/assets/video/plantriz-demo.mp4' | relative_url }}">Download the demo</a> instead.
@@ -22,6 +24,7 @@ PlanTriz is an AI academic assistant that decomposes tasks and auto-schedules th
 - **Import coursework** from an `.ics` timetable: class sessions are detected and shown for review before anything is added.
 - **Buddy status**: level, growth stage and mood.
 
-## Code
+## Links
 
-[View the code on GitHub](https://github.com/ZoeyWang02/ai-scheduler)
+- [Live site: www.plantriz.com](https://www.plantriz.com)
+- [View the code on GitHub](https://github.com/ZoeyWang02/ai-scheduler)
